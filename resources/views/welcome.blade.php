@@ -40,7 +40,7 @@
                         <a href="{{ route('admin.dashboard') }}">Home</a>
 
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Login</a> o
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
