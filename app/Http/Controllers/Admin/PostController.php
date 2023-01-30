@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Post;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
@@ -97,7 +98,11 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::all('id', 'name');
+
+        return view('admin.posts.edit', [
+            'categories'    => $categories,
+        ]);
     }
 
     /**
